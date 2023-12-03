@@ -1,4 +1,4 @@
-CREATE TABLE df_zipcode (
+CREATE TABLE IF NOT EXISTS df_zipcode (
     id INTEGER PRIMARY KEY,
     zipcode TEXT,
     BLDGZIP TEXT,
