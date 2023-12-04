@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS df_zipcode (
     geometry geometry(Geometry,2263)
 );CREATE TABLE df_zillow (
     id INTEGER PRIMARY KEY,
-    zipcode REAL,
+    zipcode TEXT,
     date TIMESTAMP,
     rent REAL
 );
