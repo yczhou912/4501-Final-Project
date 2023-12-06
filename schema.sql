@@ -19,6 +19,9 @@ CREATE TABLE IF NOT EXISTS df_zipcode (
     longitude REAL,
     x_sp TEXT,
     y_sp TEXT,
+    status TEXT,
+    health TEXT,
+    spc_common TEXT,
     geometry geometry(Geometry,2263)
 );CREATE TABLE IF NOT EXISTS df_zillow (
     id INTEGER PRIMARY KEY,
