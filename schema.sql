@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS df_zipcode (
 );CREATE TABLE IF NOT EXISTS df_tree (
     id INTEGER PRIMARY KEY,
     zipcode TEXT,
+    tree_id TEXT,
     latitude REAL,
     longitude REAL,
     x_sp TEXT,
