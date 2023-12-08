@@ -1,30 +1,28 @@
-CREATE TABLE IF NOT EXISTS df_zipcode (
+CREATE TABLE IF NOT EXISTS zipcodes (
     id INTEGER PRIMARY KEY,
     zipcode TEXT,
-    PO_NAME TEXT,
-    COUNTY TEXT,
-    geometry geometry(Geometry,2263)
-);CREATE TABLE IF NOT EXISTS df_311 (
+    location geometry(POLYGON,4326)
+);CREATE TABLE IF NOT EXISTS complaints (
     id INTEGER PRIMARY KEY,
     date TIMESTAMP,
     complaint_type TEXT,
     zipcode TEXT,
-    latitude REAL,
-    longitude REAL,
-    geometry geometry(Geometry,2263)
-);CREATE TABLE IF NOT EXISTS df_tree (
+    latitude TEXT,
+    longitude TEXT,
+    location geometry(POINT,4326)
+);CREATE TABLE IF NOT EXISTS trees (
     id INTEGER PRIMARY KEY,
     zipcode TEXT,
     tree_id TEXT,
-    latitude REAL,
-    longitude REAL,
+    latitude TEXT,
+    longitude TEXT,
     x_sp TEXT,
     y_sp TEXT,
     status TEXT,
     health TEXT,
-    spc_common TEXT,
-    geometry geometry(Geometry,2263)
-);CREATE TABLE IF NOT EXISTS df_zillow (
+    species TEXT,
+    location geometry(POINT,4326)
+);CREATE TABLE IF NOT EXISTS rents (
     id INTEGER PRIMARY KEY,
     zipcode TEXT,
     date TIMESTAMP,

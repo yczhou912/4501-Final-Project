@@ -1,5 +1,5 @@
 
-SELECT trees_count.zipcode, CAST(ROUND(CAST(rent.rent AS numeric), 2) AS DECIMAL(10,2)) AS average_rent
+SELECT trees_count.zipcode, CAST(ROUND(CAST(rents.rent AS numeric), 2) AS DECIMAL(10,2)) AS average_rent
 FROM (
     SELECT zipcode, COUNT(*) AS trees_count
     FROM trees
@@ -7,6 +7,6 @@ FROM (
     ORDER BY trees_count DESC
     LIMIT 10
 ) AS trees_count
-JOIN rent ON trees_count.zipcode = rent.zipcode
-WHERE rent.date = '2023-08-31'
+JOIN rents ON trees_count.zipcode = rents.zipcode
+WHERE rents.date = '2023-08-31'
 ORDER BY trees_count.trees_count DESC;
