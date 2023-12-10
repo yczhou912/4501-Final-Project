@@ -1,5 +1,5 @@
 
-SELECT trees_count.zipcode, CAST(ROUND(CAST(rents.rent AS numeric), 2) AS DECIMAL(10,2)) AS average_rent
+SELECT trees_count.zipcode, TO_CHAR(rents.rent, 'FM9,999,999,999.99') AS average_rent
 FROM (
     SELECT zipcode, COUNT(*) AS trees_count
     FROM trees

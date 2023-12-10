@@ -27,4 +27,18 @@ CREATE TABLE IF NOT EXISTS zipcodes (
     zipcode TEXT,
     date TIMESTAMP,
     rent REAL
+);CREATE TABLE IF NOT EXISTS shooting (
+    id INTEGER PRIMARY KEY,
+    date TIMESTAMP,
+    longitude TEXT,
+    latitude TEXT,
+    location geometry(POINT,4326)
+);CREATE TABLE IF NOT EXISTS zipcodes (
+    id INTEGER PRIMARY KEY,
+    zipcode TEXT,
+    location geometry(POLYGON,4326)
+);CREATE TABLE IF NOT EXISTS zipcodes (
+    id INTEGER PRIMARY KEY,
+    zipcode TEXT,
+    location geometry(POLYGON,4326)
 );

@@ -1,7 +1,7 @@
 
 (SELECT h_rent.zipcode, h_rent.rent, trees_count.trees_count, complaints_count.complaints_count 
 FROM (
-    SELECT zipcode, rent 
+    SELECT zipcode, TO_CHAR(rents.rent, 'FM9,999,999,999.99') AS rent 
     FROM rents
     WHERE date = '2023-01-31'
     ORDER BY rent DESC
@@ -15,13 +15,13 @@ JOIN  (
 JOIN (
     SELECT zipcode, COUNT(*) AS complaints_count
     FROM complaints
-    WHERE date BETWEEN '2023-01-01' AND '2023-01-30'
+    WHERE date BETWEEN '2023-01-01' AND '2023-02-01'
     GROUP BY zipcode
 ) AS complaints_count ON h_rent.zipcode = complaints_count.zipcode)
 UNION ALL
 (SELECT l_rent.zipcode, l_rent.rent, trees_count.trees_count, complaints_count.complaints_count 
 FROM (
-    SELECT zipcode, rent 
+    SELECT zipcode, TO_CHAR(rents.rent, 'FM9,999,999,999.99') AS rent 
     FROM rents
     WHERE date = '2023-01-31'
     ORDER BY rent ASC
@@ -35,6 +35,6 @@ JOIN  (
 JOIN (
     SELECT zipcode, COUNT(*) AS complaints_count
     FROM complaints
-    WHERE date BETWEEN '2023-12-04 00:00:00' AND '2023-12-07 23:59:59'
+    WHERE date BETWEEN '2023-01-01' AND '2023-02-01'
     GROUP BY zipcode
 ) AS complaints_count ON l_rent.zipcode = complaints_count.zipcode)
